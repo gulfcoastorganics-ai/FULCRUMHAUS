@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discuss a Project — FULCRUMHAUS</title>
+<meta name="description" content="Tell FULCRUMHAUS what you need to improve, build or automate. Submit a project for review.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js" defer></script>
+</head>
+<body class="project-page">
+<div style="font-family:Inter,sans-serif;background:#0B0B0C;color:#F5F4F0;min-height:100vh;"><a class="skip-link" href="#project-main">Skip to content</a>
+<nav class="site-nav project-nav" style="display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-bottom:1px solid rgba(198,211,0,0.25);">
+<a href="/" style="display:flex;align-items:center;gap:12px;">
+<svg height="28" viewbox="0 0 30 30" width="28"><rect fill="none" height="28" stroke="#F5F4F0" stroke-width="1.5" width="28" x="1" y="1"></rect><line stroke="#F5F4F0" stroke-width="1.5" x1="24" x2="6" y1="4" y2="26"></line></svg>
+<span style="font-family:'Space Grotesk',sans-serif;font-size:15px;letter-spacing:2.5px;font-weight:600;color:#F5F4F0;">FULCRUMHAUS</span>
+</a>
+<a href="/" style="color:#B7B6B2;font-size:11px;letter-spacing:1.5px;font-weight:500;">← BACK TO SITE</a>
+</nav>
+<main id="project-main">
+<div hidden="" id="success-state">
+<section id="project-content" style="max-width:640px;margin:0 auto;padding:180px 56px;text-align:center;">
+<svg height="42" style="margin-bottom:28px;" viewbox="0 0 40 40" width="42"><circle cx="20" cy="20" fill="none" r="19" stroke="#C6D300" stroke-width="1.5"></circle><path d="M12 20l6 6 11-13" fill="none" stroke="#C6D300" stroke-width="1.8"></path></svg>
+<h2 style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:34px;letter-spacing:-0.5px;margin:0 0 16px;color:#F5F4F0;">Submission received.</h2>
+<p style="font-size:15px;line-height:1.7;color:#9A9A96;margin:0;">A principal reviews every submission personally. Expect a reply within two business days.</p>
+</section>
+</div>
+<div id="form-state">
+<section style="max-width:1440px;margin:0 auto;padding:80px 56px 140px;">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+<div style="width:24px;height:1px;background:#C6D300;"></div>
+<span style="font-size:11px;letter-spacing:2px;font-weight:600;color:#C6D300;">PROJECT SUBMISSION</span>
+</div>
+<h1 style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:56px;line-height:1.05;letter-spacing:-1.5px;margin:0 0 20px;color:#F5F4F0;max-width:640px;">Let's build what's next.</h1>
+<p style="font-size:15.5px;line-height:1.7;color:#9A9A96;max-width:520px;margin:0 0 80px;">Four short steps. A principal reviews every submission personally and replies within two business days.</p>
+<form id="project-form" novalidate style="display:grid;grid-template-columns:1fr 380px;gap:80px;"><input aria-hidden="true" autocomplete="off" class="hp-field" id="website" name="website" tabindex="-1" type="text"><input id="startedAt" name="startedAt" type="hidden">
+<div style="display:flex;flex-direction:column;gap:64px;">
+<div>
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.14);">
+<span style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:#C6D300;">01</span>
+<span style="font-weight:600;font-size:15px;letter-spacing:1px;color:#F5F4F0;">YOUR DETAILS</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+<div style="display:flex;flex-direction:column;gap:8px;">
+<label for="name" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">FULL NAME</label>
+<input autocomplete="name" maxlength="120" id="name" name="name" placeholder="Jordan Blake" required style="background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;" type="text"/>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+<label for="company" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">COMPANY</label>
+<input autocomplete="organization" maxlength="160" id="company" name="company" placeholder="Acme Industries" required style="background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;" type="text"/>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;">
+<label for="email" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">WORK EMAIL</label>
+<input autocomplete="email" inputmode="email" maxlength="254" id="email" name="email" placeholder="jordan@acme.com" required style="background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;" type="email"/>
+</div>
+</div>
+<div>
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.14);">
+<span style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:#C6D300;">02</span>
+<span style="font-weight:600;font-size:15px;letter-spacing:1px;color:#F5F4F0;">PROJECT SCOPE</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+<div style="display:flex;flex-direction:column;gap:8px;">
+<label for="engagement" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">ENGAGEMENT</label>
+<select id="engagement" name="engagement" style="background:#161A1D;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;">
+<option value="">Select an engagement</option>
+<option>Digital Foundation</option>
+<option>Growth System</option>
+<option>Digital Infrastructure</option>
+<option>Continuity</option>
+<option>Not sure yet</option>
+</select>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+<label for="timeline" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">TARGET TIMELINE</label>
+<input maxlength="160" id="timeline" name="timeline" placeholder="e.g. Kickoff within 30 days" style="background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;" type="text"/>
+</div><div><p style="font-size:10.5px;letter-spacing:1.5px;color:#6E6E6A;margin:0 0 4px;">BUDGET</p><p id="summary-budget" style="font-size:14px;color:#F5F4F0;margin:0;">—</p></div><div class="field-inline-budget"><label for="budget" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">BUDGET RANGE</label><select id="budget" name="budget" style="background:#161A1D;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;"><option value="">Select a range</option><option value="Under $5,000">Under $5,000</option><option value="$5,000–$10,000">$5,000–$10,000</option><option value="$10,000–$20,000">$10,000–$20,000</option><option value="$20,000–$30,000">$20,000–$30,000</option><option value="$30,000+">$30,000+</option><option value="Not sure yet">Not sure yet</option></select></div>
+</div>
+</div>
+<div>
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.14);">
+<span style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:#C6D300;">03</span>
+<span style="font-weight:600;font-size:15px;letter-spacing:1px;color:#F5F4F0;">THE PROJECT</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;">
+<label for="description" style="font-size:11px;letter-spacing:1.5px;color:#8E8E8A;">WHAT ARE YOU TRYING TO BUILD, AND WHAT'S GETTING IN THE WAY?</label>
+<textarea id="description" maxlength="3000" name="description" placeholder="Give us the context a principal would need before a first call." required rows="6" style="background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:2px;padding:13px 14px;color:#F5F4F0;font-size:14px;resize:vertical;font-family:inherit;"></textarea>
+</div>
+</div>
+</div>
+<div>
+<div style="position:sticky;top:24px;background:#161A1D;border:1px solid rgba(255,255,255,0.14);padding:32px;">
+<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.14);">
+<span style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:#C6D300;">04</span>
+<span style="font-weight:600;font-size:15px;letter-spacing:1px;color:#F5F4F0;">REVIEW &amp; SUBMIT</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px;">
+<div>
+<p style="font-size:10.5px;letter-spacing:1.5px;color:#6E6E6A;margin:0 0 4px;">NAME / COMPANY</p>
+<p id="summary-name" style="font-size:14px;color:#F5F4F0;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:10.5px;letter-spacing:1.5px;color:#6E6E6A;margin:0 0 4px;">EMAIL</p>
+<p id="summary-email" style="font-size:14px;color:#F5F4F0;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:10.5px;letter-spacing:1.5px;color:#6E6E6A;margin:0 0 4px;">ENGAGEMENT</p>
+<p id="summary-engagement" style="font-size:14px;color:#F5F4F0;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:10.5px;letter-spacing:1.5px;color:#6E6E6A;margin:0 0 4px;">TIMELINE</p>
+<p id="summary-timeline" style="font-size:14px;color:#F5F4F0;margin:0;">—</p>
+</div>
+</div>
+<button id="submit-button" style="width:100%;padding:15px 26px;border:1px solid #C6D300;background:transparent;color:#C6D300;font-size:12px;letter-spacing:1.5px;font-weight:600;cursor:pointer;" type="submit">SUBMIT PROJECT →</button><p aria-live="polite" class="form-status" id="form-status" role="status"></p>
+<p style="font-size:11.5px;line-height:1.6;color:#6E6E6A;margin:16px 0 0;">By submitting, you agree to be contacted about this project and acknowledge our <a href="/privacy" style="color:#B7B6B2;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a>.</p>
+</div>
+</div>
+</form>
+</section>
+</div>
+</main>
+</div>
+</body>
+</html>
