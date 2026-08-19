@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate JavaScript syntax
+        run: |
+          node --check app.js
+          node --check api/submit.js
+      - name: Serve static site
+        run: |
+          python3 -m http.server 4173 >/tmp/fulcrumhaus-http.log 2>&1 &
+          echo $! >/tmp/fulcrumhaus-http.pid
+      - name: Smoke public pages
+        run: |
+          for i in {1..20}; do
+            if curl --fail --silent --show-error http://127.0.0.1:4173/ >/tmp/fulcrumhaus-index.html; then
+              break
+            fi
+            sleep 0.25
+          done
+          test -s /tmp/fulcrumhaus-index.html
+          grep -qi "FULCRUMHAUS" /tmp/fulcrumhaus-index.html
