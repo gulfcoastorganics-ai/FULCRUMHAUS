@@ -10,9 +10,9 @@ permissions:
   contents: read
 
 jobs:
-  smoke:
+  release-proof:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,17 +22,25 @@ jobs:
         run: |
           node --check app.js
           node --check api/submit.js
+          node --check tests/submit.test.js
+      - name: Test intake API behavior
+        run: node --test tests/submit.test.js
       - name: Serve static site
         run: |
           python3 -m http.server 4173 >/tmp/fulcrumhaus-http.log 2>&1 &
           echo $! >/tmp/fulcrumhaus-http.pid
       - name: Smoke public pages
         run: |
-          for i in {1..20}; do
-            if curl --fail --silent --show-error http://127.0.0.1:4173/ >/tmp/fulcrumhaus-index.html; then
-              break
-            fi
-            sleep 0.25
+          for route in / /project.html /privacy.html; do
+            for i in {1..20}; do
+              if curl --fail --silent --show-error "http://127.0.0.1:4173${route}" >/tmp/fulcrumhaus-page.html; then
+                break
+              fi
+              sleep 0.25
+            done
+            test -s /tmp/fulcrumhaus-page.html
           done
-          test -s /tmp/fulcrumhaus-index.html
+          curl --fail --silent --show-error http://127.0.0.1:4173/ >/tmp/fulcrumhaus-index.html
           grep -qi "FULCRUMHAUS" /tmp/fulcrumhaus-index.html
+          test -s styles.css
+          test -s app.js
